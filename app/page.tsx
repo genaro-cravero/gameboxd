@@ -1,12 +1,14 @@
 import AuthButton from "@/components/auth-button";
+import PostCard from "@/components/post-card";
 import { Button } from "@/components/ui/button";
+import { dummyPosts } from "@/dummy-post";
 import { PlusCircle } from "lucide-react";
 import Link from "next/link";
 
 export default async function Home() {
   const isAdmin = true; // Replace with actual admin check logic
   const loading = false; // Replace with actual loading state
-  const posts = [2]; // Replace with actual posts fetching logic
+  const posts = dummyPosts; // Replace with actual posts fetching logic
   return (
     <div className="min-h-screen bg-background">
       <header className="border-b">
@@ -44,8 +46,7 @@ export default async function Home() {
           ) : (
             <div className="space-y-6">
               {posts.map((post) => (
-                // <PostCard key={post.id} post={post} />
-                <h1>Holle</h1>
+                <PostCard key={post.id} post={post} />
               ))}
             </div>
           )
